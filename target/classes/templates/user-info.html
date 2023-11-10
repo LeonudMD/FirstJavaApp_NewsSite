@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о пользователе</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Изменение цвета фона */
+        }
+        .container {
+            background-color: #ffffff; /* Цвет фона контейнера */
+            border-radius: 10px; /* Закругление углов контейнера */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень контейнера */
+            padding: 20px;
+            margin-top: 20px; /* Отступ сверху */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Информация о пользователе</h2>
+    <ul>
+        <li><strong>Email:</strong> <span th:text="${user.email}"></span></li>
+        <li><strong>Телефон:</strong> <span th:text="${user.phoneNumber}"></span></li>
+        <li><strong>Имя:</strong> <span th:text="${user.name}"></span></li>
+        <li><strong>Дата создания:</strong> <span th:text="${user.dateOfCreated}"></span></li>
+    </ul>
+</div>
+
+</body>
+</html>

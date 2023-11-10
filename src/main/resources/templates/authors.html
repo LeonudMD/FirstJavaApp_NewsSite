@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/images/image.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Об авторах</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+        .authors h1 {
+            color: #333;
+            font-weight: 300;
+        }
+        .author-card {
+            transition: transform 0.3s ease;
+        }
+        .author-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-img-top {
+            height: 400px;
+            object-fit: cover;
+        }
+        .author-details {
+            margin-top: 20px;
+        }
+        .author-details li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <header th:insert="blocks/header :: header"></header>
+    <!-- Навигационные ссылки -->
+    <div class="navigation-section bg-light py-3">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <!-- Ссылки "Новости", "Главная" и "Об Авторах" по центру -->
+                <a href="/" class="nav-item btn btn-outline-dark mx-2">Главная</a>
+                <a href="/news" class="nav-item btn btn-outline-dark mx-2">Новости</a>
+                <a href="/authors" class="nav-item btn btn-outline-dark mx-2">Об Авторах</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Секция авторов -->
+    <section class="authors">
+        <h1 class="text-center mb-5">Наши уважаемые авторы</h1>
+        <div class="row">
+            <!-- Хисока Мороу -->
+            <div class="col-md-6 mb-4">
+                <div class="card author-card">
+                    <!-- Здесь должно быть изображение Хисоки Мороу -->
+                    <img src="/images/hisoka.png" class="card-img-top" alt="Хисока Мороу">
+                    <div class="card-body">
+                        <h3 class="card-title">Хисока Мороу</h3>
+                        <p class="card-text">Загадочный и харизматичный, Хисока Мороу привносит в наш новостной сайт ту же хитрость и стратегическую глубину, за которую его знают во вселенной Hunter x Hunter. Его острый ум помогает раскрывать самые захватывающие истории.</p>
+                        <ul class="author-details">
+                            <li>Специализация: политические интриги и международные отношения.</li>
+                            <li>Любимая тема: "Игры разума и стратегии власти".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Джейсон Стэтхэм -->
+            <div class="col-md-6 mb-4">
+                <div class="card author-card">
+                    <!-- Здесь должно быть изображение Джейсона Стэтхэма -->
+                    <img src="/images/logo.png" class="card-img-top" alt="Джейсон Стэтхэм">
+                    <div class="card-body">
+                        <h3 class="card-title">Джейсон Стэтхэм</h3>
+                        <p class="card-text">От гонок на высоких скоростях до погружений на глубину, Джейсон Стэтхэм испытал это всё. Теперь он переносит свой богатый опыт на страницы нашего сайта, предлагая взрывные новостные статьи, которые заставят вас затаить дыхание.</p>
+                        <ul class="author-details">
+                            <li>Специализация: экстремальные виды спорта и каскадёрские трюки.</li>
+                            <li>Любимая тема: "Адреналин и риск: жизнь на грани".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <div th:insert="blocks/footer :: footer"></div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/js/time.js"></script>
+</body>
+</html>

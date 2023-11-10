@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>News</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/images/image.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container mt-5">
+    <header th:insert="blocks/header :: header"></header>
+    <div class="additional-section">
+        <div class="text-center">
+            <a href="/" class="nav-item btn btn-outline-dark">Главная</a>
+            <a href="/news" class="nav-item btn btn-outline-dark">Новости</a>
+            <a href="/authors" class="nav-item btn btn-outline-dark">Об Авторах</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Последние новости</h2>
+
+        <div th:each="el : ${news}" class="alert alert-info mt-2">
+            <h3 th:text="${el.title}"></h3>
+            <p th:text="${el.anons}"></p>
+            <a th:href="'/news/' + ${el.id}" class="btn btn-warning">Подробнее</a>
+        </div>
+    </div>
+
+    <div th:insert="blocks/footer :: footer"></div>
+</div>
+<script src="/js/time.js"></script>
+<!-- Подключение Bootstrap JS (необходимо для некоторых компонентов) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

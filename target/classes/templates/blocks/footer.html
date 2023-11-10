@@ -1,0 +1,18 @@
+<!--Футер для всех страниц -->
+<!--Написать в основу: <div th:isert="blocks/footer :: div"></div>-->
+
+<div th:fragment="footer">
+    <div class="footer text-center">
+        <div class="footer-content">
+            <div class="stats-section">
+                <span class="stats-label">Текущая дата и время:</span>
+                <span id="current-time" class="stats-value"></span>
+            </div>
+            <div class="stats-section">
+                <span class="stats-label">Количество посещений:</span>
+                <span th:text="${visitCount}" class="stats-value"></span>
+            </div>
+        </div>
+        <p class="rights">© Все права защищены, 2023</p>
+    </div>
+</div>

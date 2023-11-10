@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderator Panel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="/images/image.ico" type="image/x-icon">
+    <style>
+
+        body {
+            background-image: url('/images/FonModer.png');
+        }
+
+        .container {
+            background-color: #fffcee; /* Цвет фона контейнера */
+            border-radius: 30px; /* Закругление углов контейнера */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень контейнера */
+            padding: 20px;
+            margin-top: 20px; /* Отступ сверху */
+        }
+
+        .news-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .news-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .add-news-btn {
+            background-color: #28a745; /* Цвет кнопки */
+            border-color: #28a745; /* Цвет рамки кнопки */
+            color: #fff; /* Цвет текста на кнопке */
+        }
+
+        .add-news-btn:hover {
+            background-color: #218838; /* Цвет кнопки при наведении */
+            border-color: #1e7e34; /* Цвет рамки кнопки при наведении */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Moderator Panel</h1>
+    <h2>Список новостей</h2>
+    <br>
+    <div class="container mt-3">
+        <form action="/AddNews" method="get" class="text-center">
+            <button class="btn add-news-btn btn-lg" type="submit">Добавить новость</button>
+        </form>
+    </div>
+    <div th:each="el : ${news}" class="news-card">
+        <h3 th:text="${el.title}"></h3>
+        <p th:text="${el.anons}"></p>
+        <div class="news-actions">
+            <a th:href="'/news/' + ${el.id}" class="btn btn-info">Подробнее</a>
+            <a th:href="'/news/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a>
+            <form th:action="'/news/' + ${el.id} + '/remove'" method="post">
+                <button class="btn btn-danger" type="submit">Удалить</button>
+            </form>
+        </div>
+    </div>
+    <a href="/profile" class="btn btn-info">Назад</a>
+</div>
+
+
+
+<script src="/js/time.js"></script>
+<!-- Подключение Bootstrap JS (необходимо для некоторых компонентов) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
